@@ -1,0 +1,27 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "A burger logger created with MySQL, Node, Express, Handlebars and an ORM using the MVC design pattern.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astlecha/burger.git"
+  },
+  "keywords": [],
+  "author": "Charlotte Astle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/astlecha/burger/issues"
+  },
+  "homepage": "https://github.com/astlecha/burger#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.9",
+    "mysql": "^2.14.0"
+  }
+}

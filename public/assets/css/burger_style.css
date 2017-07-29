@@ -1,0 +1,23 @@
+body{
+	background-color: #FFDEAD;
+}
+
+h1{
+	font-size: 40px;
+	text-align: center;
+	color: white;
+}
+
+p{
+	font-size: 20px;
+}
+
+img{
+	height: 200px;
+	margin-left: 75px;
+}
+
+.panel.panel-default{
+	padding: 20px;
+	text-align: center;
+}
