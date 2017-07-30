@@ -20,7 +20,10 @@ app.set('view engine', 'handlebars');
 //Import routes and give the server access to them.
 var routes = require('./controllers/burgers_controller.js');
 
-app.use('/', routes);
+// app.use('/', routes);
+
+require("./app/routes/api-routes.js")(app);
+require("./app/routes/html-routes.js")(app);
 
 //Port listener
 app.listen(port);
