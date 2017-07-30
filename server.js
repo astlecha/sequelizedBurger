@@ -18,15 +18,16 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Static directory
 app.use(express.static("public"));
 
-
 //Import routes and give the server access to them.
 var routes = require('./controllers/burgers_controller.js');
 
 // app.use('/', routes);
-
 require("./app/routes/api-routes.js")(app);
 require("./app/routes/html-routes.js")(app);
 
-//Port listener
-app.listen(port);
-console.log('Listening on port ', port);
+//Port listener synced with database
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
+});
