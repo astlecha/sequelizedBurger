@@ -3,7 +3,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 //Establish port and express app
-var port = process.env.port || 8080;
+var PORT = process.env.PORT || 8080;
 var app = express();
 
 // Requiring our models for syncing
@@ -18,12 +18,15 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Static directory
 app.use(express.static("public"));
 
-//Import routes and give the server access to them.
-var routes = require('./controllers/burgers_controller.js');
+// Set Handlebars
+var exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-// app.use('/', routes);
-require("./app/routes/api-routes.js")(app);
-require("./app/routes/html-routes.js")(app);
+// Routes
+// =============================================================
+require("./routes/api-routes.js")(app);
+// require("./routes/html-routes.js")(app);
 
 //Port listener synced with database
 db.sequelize.sync({ force: true }).then(function() {
